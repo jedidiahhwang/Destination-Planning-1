@@ -59,4 +59,4 @@ function displayDestinations(arr) {
 
 form.addEventListener('submit', submitHandler)
 
-getAllDestinations()
+window.onload = getAllDestinations()
