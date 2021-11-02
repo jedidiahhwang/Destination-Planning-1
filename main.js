@@ -1,7 +1,7 @@
   
 const destinationsContainer = document.querySelector('#destinations-container')
 const form = document.querySelector('form')
-const baseURL = process.env.baseURL || "http://localhost:5001"
+const baseURL = `https://jh-destination-planning.herokuapp.com` || "http://localhost:5001"
 
 // const baseURL = `http://localhost:${port}/api/destinations`
 // const baseURL = `https://jh-destination-planning.herokuapp.com`
@@ -9,7 +9,7 @@ const baseURL = process.env.baseURL || "http://localhost:5001"
 const destinationsCallback = ({ data: destinations }) => displayDestinations(destinations)
 const errCallback = err => console.log(err)
 
-const getAllDestinations = () => axios.get(`${baseURL}/api/destinations`).then(destinationsCallback).catch(errCallback)
+const getAllDestinations = () => axios.get(`/api/destinations`).then(destinationsCallback).catch(errCallback)
 const createDestination = body => axios.post(`${baseURL}/api/destinations`, body).then(destinationsCallback).catch(errCallback)
 const deleteDestination = id => axios.delete(`${baseURL}/api/destinations/${id}`).then(destinationsCallback).catch(errCallback)
 const updateDestinationPrice = (id, type) => axios.put(`${baseURL}/api/destinations/price/${id}`, {type}).then(destinationsCallback).catch(errCallback)
