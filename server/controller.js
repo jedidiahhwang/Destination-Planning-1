@@ -25,7 +25,7 @@ module.exports = {
         globalID++
     },
 
-    updateDestination: (req, res) => {
+    updateDestinationPrice: (req, res) => {
         let { id } = req.params
         let { type } = req.body
         
@@ -40,12 +40,12 @@ module.exports = {
             destinations[index].price = +destinations[index].price + 50
             res.status(200).send(destinations)
         } else {
-            res.sendStatus(400).send('you messed up')
+            res.sendStatus(400).send('error')
         }
        
     },
 
-    updateDestination: (req, res) => {
+    updateDestinationPassengers: (req, res) => {
         let { id } = req.params
         let { type } = req.body
         
@@ -60,7 +60,7 @@ module.exports = {
             destinations[index].passengers = +destinations[index].passengers + 1
             res.status(200).send(destinations)
         } else {
-            res.sendStatus(400).send('you messed up')
+            res.sendStatus(400).send('error')
         }
     }
 }

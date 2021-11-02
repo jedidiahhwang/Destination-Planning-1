@@ -21,9 +21,14 @@
     justify-content: center; 
     align-items: center;
     color: gray;
-    font-weight: bolder
+    font-weight: bolder;
+    font-size: 35px;
   }
   
+h1{
+  color: white
+}
+
   main {
     display: flex; 
     justify-content: center;
@@ -40,6 +45,8 @@
     align-items: center;
     margin: 30px;
     opacity: 1.0;
+    /* box-shadow: 5px 10px #1e1c1c; */
+    border-radius: 12px;
   }
   
   button {
@@ -104,6 +111,7 @@
     border-radius: 12px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    /* box-shadow: 5px 10px #1e1c1c */
   }
   
   .destination-destination {
@@ -111,10 +119,11 @@
     margin: 5px 0;
   }
   
-  .destination-price {
+  /* .destination-price {
     font-size: 15px;
     margin: 5px 0;
-  }
+   
+  } */
   
   .btns-container {
     width: 100%; 

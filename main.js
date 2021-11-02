@@ -10,7 +10,8 @@ const errCallback = err => console.log(err)
 const getAllDestinations = () => axios.get(baseURL).then(destinationsCallback).catch(errCallback)
 const createDestination = body => axios.post(baseURL, body).then(destinationsCallback).catch(errCallback)
 const deleteDestination = id => axios.delete(`${baseURL}/${id}`).then(destinationsCallback).catch(errCallback)
-const updateDestination = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then(destinationsCallback).catch(errCallback)
+const updateDestinationPrice = (id, type) => axios.put(`${baseURL}/price/${id}`, {type}).then(destinationsCallback).catch(errCallback)
+const updateDestinationPassengers = (id, type) => axios.put(`${baseURL}/passengers/${id}`, {type}).then(destinationsCallback).catch(errCallback)
 
 function submitHandler(e) {
     e.preventDefault()
@@ -38,21 +39,22 @@ function submitHandler(e) {
 function createDestinationCard(destinations) {
     const destinationCard = document.createElement('div')
     destinationCard.classList.add('destination-card')
+    let totalPrice = destinations.price * destinations.passengers
 
     destinationCard.innerHTML = `<img alt='destination cover image' src=${destinations.imageURL} class="destination-cover-image"/>
     <p class="destination">${destinations.destination}</p>
 
     <div class="btns-container">
-        <button onclick="updateDestination(${destinations.id}, 'minus')">-</button>
+        <button onclick="updateDestinationPrice(${destinations.id}, 'minus')">-</button>
         <p class="price">$${destinations.price}</p>
-        <button onclick="updateDestination(${destinations.id}, 'plus')">+</button>
+        <button onclick="updateDestinationPrice(${destinations.id}, 'plus')">+</button>
 
-        <button onclick="updateDestination(${destinations.id}, 'minus')">-</button>
+        <button onclick="updateDestinationPassengers(${destinations.id}, 'minus')">-</button>
         <p class="passengers">${destinations.passengers}</p>
-        <button onclick="updateDestination(${destinations.id}, 'plus')">+</button>
+        <button onclick="updateDestinationPassengers(${destinations.id}, 'plus')">+</button>
     </div>
 
-    <p class="totalPrice">$${destinations.price}*${destinations.passengers}</p>
+    <p class="totalPrice">Total Price: $${totalPrice}</p>
     <button onclick="deleteDestination(${destinations.id})">Delete</button>
     `
 

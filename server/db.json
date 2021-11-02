@@ -1,21 +1,21 @@
 [
     {
       "id": 1,
-      "destination": "Hawaii HI",
+      "destination": "Hawaii, HI",
       "price": 1100,
-      "passengers": 1,
+      "passengers": 2,
       "imageURL" : "https://i.postimg.cc/Gp2SCVWr/aussieactive-Vx-FQCqa-I7pk-unsplash.jpg"
     },
     {
       "id": 2,
-      "destination": "Boston MA",
+      "destination": "Boston, MA",
       "price": 709,
-      "passengers": 1,
+      "passengers": 3,
       "imageURL" : "https://i.postimg.cc/kMbnFbRq/anastasiya-starz-9-Gr-A6-Yk8z-Zo-unsplash.jpg"
     },
     {
       "id": 3,
-      "destination": "Sydney Australia",
+      "destination": "Sydney, Australia",
       "price": 2934,
       "passengers": 1,
       "imageURL" : "https://i.postimg.cc/Xvk5vP31/caleb-russell-Jmuy-B-Lib-Ro-unsplash.jpg"

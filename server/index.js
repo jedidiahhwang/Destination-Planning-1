@@ -6,19 +6,13 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-// const {
-//   getDestinations,
-//   deleteDestination, 
-//   createDestination, 
-//   updateDestination
-// } = require('./controller')
-
 const ctrl = require("./controller")
 
 app.get(`/api/destinations`, ctrl.getDestinations)
 app.delete(`/api/destinations/:id`, ctrl.deleteDestination)
 app.post(`/api/destinations`, ctrl.createDestination)
-app.put(`/api/destinations/:id`, ctrl.updateDestination)
+app.put(`/api/destinations/price/:id`, ctrl.updateDestinationPrice)
+app.put(`/api/destinations/passengers/:id`, ctrl.updateDestinationPassengers)
 
 app.get('/',function(req,res) {
   res.sendFile(path.join(__dirname, '../main.html'));
