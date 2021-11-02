@@ -1,8 +1,9 @@
   
 const destinationsContainer = document.querySelector('#destinations-container')
 const form = document.querySelector('form')
+const port = process.env.PORT || 5001
 
-const baseURL = `http://localhost:${process.env.PORT}/api/destinations`
+const baseURL = `http://localhost:${port}/api/destinations`
 
 const destinationsCallback = ({ data: destinations }) => displayDestinations(destinations)
 const errCallback = err => console.log(err)
