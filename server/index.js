@@ -29,6 +29,6 @@ app.get('/js',function(req,res) {
 
 const port = process.env.PORT || 5001
 
-app.listen(port, () => {
-  console.log(`Over ${port}`)
+app.listen(process.env.PORT, () => {
+  console.log(`Over ${process.env.PORT}`)
 })
