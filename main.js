@@ -9,7 +9,7 @@ const baseUrl = process.env.baseURL || "http://localhost:5001/api/destinations"
 const destinationsCallback = ({ data: destinations }) => displayDestinations(destinations)
 const errCallback = err => console.log(err)
 
-const getAllDestinations = () => axios.get(baseURL).then(destinationsCallback).catch(errCallback)
+const getAllDestinations = () => axios.get(`/api/destinations`).then(destinationsCallback).catch(errCallback)
 const createDestination = body => axios.post(baseURL, body).then(destinationsCallback).catch(errCallback)
 const deleteDestination = id => axios.delete(`${baseURL}/${id}`).then(destinationsCallback).catch(errCallback)
 const updateDestinationPrice = (id, type) => axios.put(`${baseURL}/price/${id}`, {type}).then(destinationsCallback).catch(errCallback)
