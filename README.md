@@ -15,6 +15,6 @@ Deployed on Heroku: https://week-8-project-ah.herokuapp.com/
 
 
 ### Author
-Adam Hunter is an aspiring software engineer in the Orem, UT area.
+Adam Hunter is an aspiring web developer in the Orem, UT area.
 
 Learn more about the developer: www.linkedin.com/in/adam-hunter-
