@@ -1,7 +1,7 @@
   
 const destinationsContainer = document.querySelector('#destinations-container')
 const form = document.querySelector('form')
-const baseUrl = process.env.baseURL || "http://localhost:5001/api/destinations"
+const baseURL = process.env.baseURL || "http://localhost:5001"
 
 // const baseURL = `http://localhost:${port}/api/destinations`
 // const baseURL = `https://jh-destination-planning.herokuapp.com`
@@ -10,10 +10,10 @@ const destinationsCallback = ({ data: destinations }) => displayDestinations(des
 const errCallback = err => console.log(err)
 
 const getAllDestinations = () => axios.get(`/api/destinations`).then(destinationsCallback).catch(errCallback)
-const createDestination = body => axios.post(baseURL, body).then(destinationsCallback).catch(errCallback)
-const deleteDestination = id => axios.delete(`${baseURL}/${id}`).then(destinationsCallback).catch(errCallback)
-const updateDestinationPrice = (id, type) => axios.put(`${baseURL}/price/${id}`, {type}).then(destinationsCallback).catch(errCallback)
-const updateDestinationPassengers = (id, type) => axios.put(`${baseURL}/passengers/${id}`, {type}).then(destinationsCallback).catch(errCallback)
+const createDestination = body => axios.post(`/api/destinations`, body).then(destinationsCallback).catch(errCallback)
+const deleteDestination = id => axios.delete(`/api/destinations/${id}`).then(destinationsCallback).catch(errCallback)
+const updateDestinationPrice = (id, type) => axios.put(`/api/destinations/price/${id}`, {type}).then(destinationsCallback).catch(errCallback)
+const updateDestinationPassengers = (id, type) => axios.put(`/api/destinations/passengers/${id}`, {type}).then(destinationsCallback).catch(errCallback)
 
 function submitHandler(e) {
     e.preventDefault()
