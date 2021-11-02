@@ -45,7 +45,7 @@
   button {
     background-color: white;
     width: 120px;
-    height: 35px;
+    height: 30px;
     color: black;
     border: none;
     margin: 5px;
@@ -67,13 +67,16 @@
   
   #price-container {
     width: 85%;
+    
   }
+
   
   #radio-container {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
   }
   
   #destinations-container {
@@ -81,6 +84,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+  
   }
   
   .destination-cover-image {
@@ -117,6 +121,7 @@
     display: flex;
     justify-content: space-evenly;
     margin: 5px;
+    
   }
   
   .btns-container > button {

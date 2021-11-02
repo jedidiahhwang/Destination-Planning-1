@@ -17,11 +17,13 @@ function submitHandler(e) {
 
     let destination = document.querySelector('#destination')
     let price = document.querySelector('#price')
+    let passengers = document.querySelector('#passengers')
     let imageURL = document.querySelector('#img')
 
     let bodyObj = {
         destination: destination.value,
-        price: price.value, 
+        price: price.value,
+        passengers: passengers.value,
         imageURL: imageURL.value
     }
 
@@ -29,6 +31,7 @@ function submitHandler(e) {
 
     destination.value = ''
     price.value = ''
+    passengers.value = ''
     imageURL.value = ''
 }
 
@@ -38,11 +41,18 @@ function createDestinationCard(destinations) {
 
     destinationCard.innerHTML = `<img alt='destination cover image' src=${destinations.imageURL} class="destination-cover-image"/>
     <p class="destination">${destinations.destination}</p>
+
     <div class="btns-container">
         <button onclick="updateDestination(${destinations.id}, 'minus')">-</button>
         <p class="price">$${destinations.price}</p>
         <button onclick="updateDestination(${destinations.id}, 'plus')">+</button>
+
+        <button onclick="updateDestination(${destinations.id}, 'minus')">-</button>
+        <p class="passengers">${destinations.passengers}</p>
+        <button onclick="updateDestination(${destinations.id}, 'plus')">+</button>
     </div>
+
+    <p class="totalPrice">$${destinations.price}*${destinations.passengers}</p>
     <button onclick="deleteDestination(${destinations.id})">Delete</button>
     `
 
