@@ -2,7 +2,7 @@
 const destinationsContainer = document.querySelector('#destinations-container')
 const form = document.querySelector('form')
 
-const baseURL = `http://localhost:5000/api/destinations`
+const baseURL = `http://localhost:5001/api/destinations`
 
 const destinationsCallback = ({ data: destinations }) => displayDestinations(destinations)
 const errCallback = err => console.log(err)
@@ -57,7 +57,6 @@ function createDestinationCard(destinations) {
     <p class="totalPrice">Total Price: $${totalPrice}</p>
     <button onclick="deleteDestination(${destinations.id})">Delete</button>
     `
-
 
     destinationsContainer.appendChild(destinationCard)
 }
