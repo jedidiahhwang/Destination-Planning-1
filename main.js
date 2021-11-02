@@ -1,10 +1,10 @@
   
 const destinationsContainer = document.querySelector('#destinations-container')
 const form = document.querySelector('form')
-const port = process.env.PORT || 5001
+const baseUrl = process.env.baseURL || "http://localhost:5001/api/destinations"
 
 // const baseURL = `http://localhost:${port}/api/destinations`
-const baseURL = `https://jh-destination-planning.herokuapp.com`
+// const baseURL = `https://jh-destination-planning.herokuapp.com`
 
 const destinationsCallback = ({ data: destinations }) => displayDestinations(destinations)
 const errCallback = err => console.log(err)
